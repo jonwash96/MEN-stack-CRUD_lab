@@ -6,7 +6,7 @@
     <title>Add Resources</title>
 </head>
 <body>
-    <%- include('../../partials/navbar.ejs') %>
+    <%- include('../../partials/navbar.ejs', { apex:'../../../' }) %>
 
     <h1>Add a new License to the Database</h1>
     <form id="license" action="./Licenses" method="POST">

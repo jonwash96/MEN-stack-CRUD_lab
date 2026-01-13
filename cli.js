@@ -29,15 +29,15 @@ async function selectAction() {
     );
     input = prompt('Select a resource Type: ');
     switch (input) {
-        case '1': Resource = Resources.asset; break;
-        case '2': Resource = Resources.license; break;
+        case '1': Resource = Resources.Asset; break;
+        case '2': Resource = Resources.License; break;
         case '3': {for (let r in Resources) {
             const all = await Resources[r].find({});
             console.log(all);
         } return exit();} break;
     };
-    input==='1' && (Resource = Resources.asset);
-    input==='2' && (Resource = Resources.license);
+    input==='1' && (Resource = Resources.Asset);
+    input==='2' && (Resource = Resources.License);
     await getResources();
 
     console.log("\nWelcome to the CRM\nType 'q' to Quit\nWhat would you like to do?");

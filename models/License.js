@@ -16,9 +16,7 @@ const licenseTemplate = {
 const licenseSchema = new mongoose.Schema(licenseTemplate);
 
 licenseSchema.pre('save', function() {
-    // console.log("NEXT:: ", next)
     this.resourceType = 'license';
-    // next ();
 });
 
 const License = mongoose.model('license', licenseSchema);

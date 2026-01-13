@@ -2,16 +2,22 @@
 <html lang="en">
 <%- include('../partials/head', { title:`${data.name} ${data.resourceType} Details`}) %>
 <body>
-    <%- include('../partials/navbar') %>
+    <%- include('../partials/navbar', { apex:'../../' }) %>
     
     <h1><% data.name %></h1>
     <ul>
-    <% for (let item in data) { %>
+    <% for (let item in template) { %>
         <li>
-            <h4><%= item %></h4>
-            <p><%= data[item] %></p>
+            <h4 cameltotitle><%= item %></h4>
+            <p class="item-to-edit"><%= data[item] %><span>  <a href="/resources/<%= data.resourceType %>/<%= data._id %>/edit">✎</a></span></p>
         </li>
     <% } %>
     </ul>
+    <form action="/resources/<%= data.resourceType %>/<%= data._id %>/edit" method="GET">
+        <button type="submit">Edit</button>
+    </form>
+    <form action="/resources/<%= data.resourceType %>/<%= data._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
 </body>
 </html>
