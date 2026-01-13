@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Resources</title>
+</head>
+<body>
+    <%- include('../../partials/navbar.ejs') %>
+
+    <h1>Add a new Asset to the Database</h1>
+    <form id="new-asset" action="./Assets" method="POST">
+        <fieldset aria-labelledby="Physical Assets">
+            <legend>Add Physical Assets</legend>
+
+            <label for="categories">Asset Category:</label>
+            <select id="category" name="category" list="categories">
+                <option value="">--Asset</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Monitor">Monitor</option>
+                <option value="Phablet">Phablet</option>
+                <option value="Tablet PC">Tablet PC</option>
+                <option value="Telephone">Telephone</option>
+                <option value="Server">Server</option>
+                <option value="Cable">Cable</option>
+                <option value="Furniture">Furniture</option>
+            </select>
+            
+            <label for="brand">Brand:</label>
+            <input id="brand" name="brand" type="text" maxlength="30" required>
+
+            <label for="brand">Name:</label>
+            <input id="name" name="name" type="text" maxlength="30" required>
+
+            <label for="serial-number">Serial Number:</label>
+            <input id="serial-number" name="serial-number" type="number" maxlength="30" required>
+
+            <label for="status">Status:</label>
+            <select id="status" name="status" list="statuses" required>
+                <option value="">--Status</option>
+                <option value="Active">Active</option>
+                <option value="Storage">Storage</option>
+                <option value="Retired">Retired</option>
+            </select>
+
+            <label for="assigned-to">Assigned To</label>
+            <input id="assigned-to" name="assigned-to" type="text" maxlength="30" required>
+
+            <label for="purchase-date">Purchase Date</label>
+            <input id="purchase-date" name="purchase-date" type="date" required>
+
+            <label for="warranty-end">Warranty End</label>
+            <input id="warranty-end" name="warranty-end" type="date" required>
+
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" type="date"></textarea>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

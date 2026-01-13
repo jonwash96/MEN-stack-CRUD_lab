@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head', { title:`Deleted: ${data.name}`}) %>
+<body>
+    <div class="card">
+        <h1><%= data.name %> Successfuly Deleted!</h1>
+        <p id="countdown">you have </p>
+        <p>Redirecting. . .</p>
+        <h6>If the page does not automatically redirect, click <a href="./resources">here</a></h6>
+        
+        <br>
+
+        <h1><% data.name %></h1>
+        <ul>
+        <% for (let item in data) { %>
+            <li>
+                <h4><%= item %></h4>
+                <p><%= data[item] %></p>
+            </li>
+        <% } %>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        setTimeout(()=>window.location = "./resources", 5000);
+        let count = 5;
+        setInterval(()=>{
+            document.getElementById('countdown').innerHTML = `You have ${count} to copy the data & recover it.`; 
+            count--;
+        }, 1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <%- include('./partials/searchbar.ejs') %>
+
+    <h1>Welcome to the Home Page</h1>
+    <div>
+        
+        <ul>
+            <h2>Create Resources</h2>
+            <li><a href="./resources/Licenses/new">New Software License</a></li>
+            <li><a href="./resources/Assets/new">New Physical Asset</a></li>
+        </ul>
+        <ul>
+            <h2>View Resources</h2>
+            <li><a href="./resources/Licenses">View all Licenses</a></li>
+            <li><a href="./resources/Assets">View all Assets</a></li>
+        </ul>
+    </div>
+</body>
+</html>

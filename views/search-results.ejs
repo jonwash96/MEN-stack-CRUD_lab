@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', { title:"All Resources" }) %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <h1>All Resources</h1>
+    <%  Object.keys(data).forEach(category => { %>
+        <h2 id="<%= category %>" pluralize><%= category %></h2>
+        <ul>
+            <% data[category].map(resource => { %>
+            <li>
+                <ul>
+                    <h3><%= resource.name %></h3>
+                <% for (let item of Object.keys(templates[category])) { %>
+                    <% if (item!=='name') { %>
+                        <li normalizecsv><strong cameltotitle><%= item %></strong>: <%= resource[item] %></li>
+                    <% } %>
+                <% } %>
+                </ul>
+            </li>
+            <% }) %>
+        </ul>
+    <% }) %>
+</body>
+</html>
