@@ -34,6 +34,7 @@ router.post('/', async (req,res) => {
 
     if (!req.body.searchString.match(/licenses?/gi)) delete resourceTypes.License;
     if (!req.body.searchString.match(/assets?/gi)) delete resourceTypes.Asset;
+    if (Object.values(resourceTypes).length===0)  resourceTypes = {License, Asset};
     
     Object.values(resourceTypes).forEach(async resourceType => {
         // 1. Exact match
