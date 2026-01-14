@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Resources</title>
-</head>
+<%- include('../../partials/head', {title:"New Asset"}) %>
 <body>
     <%- include('../../partials/navbar.ejs', { apex:'../../../' }) %>
 
     <h1>Add a new Asset to the Database</h1>
-    <form id="new-asset" action="./Assets" method="POST">
+    <form id="new-asset" action="/resources/Assets" method="POST">
         <fieldset aria-labelledby="Physical Assets">
             <legend>Add Physical Assets</legend>
 
@@ -33,7 +29,7 @@
             <input id="name" name="name" type="text" maxlength="30" required>
 
             <label for="serial-number">Serial Number:</label>
-            <input id="serial-number" name="serial-number" type="number" maxlength="30" required>
+            <input id="serial-number" name="serialNumber" type="number" maxlength="30" required>
 
             <label for="status">Status:</label>
             <select id="status" name="status" list="statuses" required>
@@ -44,13 +40,13 @@
             </select>
 
             <label for="assigned-to">Assigned To</label>
-            <input id="assigned-to" name="assigned-to" type="text" maxlength="30" required>
+            <input id="assigned-to" name="assignedTo" type="text" maxlength="30" required>
 
             <label for="purchase-date">Purchase Date</label>
-            <input id="purchase-date" name="purchase-date" type="date" required>
+            <input id="purchase-date" name="purchaseDate" type="date" required>
 
             <label for="warranty-end">Warranty End</label>
-            <input id="warranty-end" name="warranty-end" type="date" required>
+            <input id="warranty-end" name="warrantyEnd" type="date" required>
 
             <label for="notes">Additional Notes</label>
             <textarea id="notes" name="notes" type="date"></textarea>

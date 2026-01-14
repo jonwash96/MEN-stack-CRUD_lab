@@ -68,8 +68,9 @@ router.put('/:resourceType/:resourceId', async (req, res) => {
 // Create - POST /resources => Use the Request body to create a new resource 
 router.post('/:resourceType', async (req, res) => {
     const Resource = Resources[req.params.resourceType.replace(/s$/, '')];
+    const template = req.params.resourceType==='asset' ? templates.Asset : templates.License;
     req.body['resourceType'] = req.params.resourceType.replace(/s$/, '');
-    await Resource.create(req.body);
+    const data = await Resource.create(req.body);
 
     Object.values(req.body).forEach(item => {
         if (Array.isArray(item)) { item = item.split(',') }

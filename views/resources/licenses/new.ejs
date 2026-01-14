@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Resources</title>
-</head>
+<%- include('../../partials/head', {title:"New License"}) %>
 <body>
     <%- include('../../partials/navbar.ejs', { apex:'../../../' }) %>
 
     <h1>Add a new License to the Database</h1>
-    <form id="license" action="./Licenses" method="POST">
+    <form id="license" action="/resources/Licenses" method="POST">
         <fieldset aria-labelledby="Licenses">
             <legend>Add License</legend>
 
@@ -30,16 +26,16 @@
             <input id="name" name="name" type="text" maxlength="30" required>
 
             <label for="license-key">License Key:</label>
-            <input id="license-key" name="license-key" type="text" maxlength="30" required>
+            <input id="license-key" name="licenseKey" type="text" maxlength="30" required>
 
             <label for="seats-total">Seats Total:</label>
-            <input id="seats-total" name="seats-total" type="number" required>
+            <input id="seats-total" name="seatsTotal" type="number" required>
 
             <label for="seats-used">Seats Used:</label>
-            <input id="seats-used" name="seats-used" type="number" required>
+            <input id="seats-used" name="seatsUsed" type="number" required>
 
             <label for="renewal-date">Renewal Date:</label>
-            <input id="renewal-date" name="renewal-date" type="date" required>
+            <input id="renewal-date" name="renewalDate" type="date" required>
 
             <label for="assignees">Assignees:</label>
             <input id="assignees" name="assignees" type="text" required>

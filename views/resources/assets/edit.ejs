@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Resources</title>
-</head>
+<%- include('../../partials/head', {title:"New Asset"}) %>
 <body>
     <%- include('../../partials/navbar.ejs', { apex:'../../../' }) %>
 
     <h1>Add a new Asset to the Database</h1>
     <form id="new-asset" action="/resources/Assets/<%= data.id %>?_method=PUT" method="POST">
         <fieldset aria-labelledby="Physical Assets">
-            <legend>Add Physical Assets</legend>
+            <legend>Update Physical Assets</legend>
 
             <label for="categories">Asset Category:</label>
             <select id="category" name="category" list="categories">

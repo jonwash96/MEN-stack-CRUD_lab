@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../partials/head', {title:"Edit License"}) %>
+<body>
+    <%- include('../../partials/navbar.ejs', { apex:'../../../' }) %>
+
+    <h1>Add a new License to the Database</h1>
+    <form id="license" action="/resources/Licenses/<%= data.id %>?_method=PUT" method="POST">
+        <fieldset aria-labelledby="Licenses">
+            <legend>Update License</legend>
+
+            <label for="category">License Category:</label>
+            <select id="category" name="category">
+                <option value="Internal" <%= data.category==='Internal' && "selected" %>>Internal</option>
+                <option value="Customer-Facing Application" <%= data.category==='Customer-Facing Application' && "selected" %>>Customer-Facing</option>
+                <option value="Media" <%= data.category==='Media' && "selected" %>>Media</option>
+                <option value="Rental" <%= data.category==='Rental' && "selected" %>>Rental</option>
+                <option value="Permit" <%= data.category==='Permit' && "selected" %>>Permit</option>
+            </select>
+
+            <label for="vendor">Vendor:</label>
+            <input id="vendor" name="vendor" type="text" maxlength="30" required value="<%= data.vendor %>">
+
+            <label for="name">Product Name:</label>
+            <input id="name" name="name" type="text" maxlength="30" required value="<%= data.name %>">
+
+            <label for="license-key">License Key:</label>
+            <input id="license-key" name="licenseKey" type="text" maxlength="30" required value="<%= data.licenseKey %>">
+
+            <label for="seats-total">Seats Total:</label>
+            <input id="seats-total" name="seatsTotal" type="number" required value="<%= data.seatsTotal %>">
+
+            <label for="seats-used">Seats Used:</label>
+            <input id="seats-used" name="seatsUsed" type="number" required value="<%= data.seatsUsed %>">
+
+            <label for="renewal-date">Renewal Date:</label>
+            <input id="renewal-date" name="renewalDate" type="date" required value="<%= data.renewalDate %>">
+
+            <label for="assignees">Assignees:</label>
+            <input id="assignees" name="assignees" type="text" required value="<%= data.assignees %>">
+
+            <label for="notes">Additional Notes:</label>
+            <textarea id="notes" name="notes" type="date">
+                <%= data.notes %>
+            </textarea>
+
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>
